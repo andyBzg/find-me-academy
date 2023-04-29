@@ -1,6 +1,6 @@
 package classes;
 
-import enums.AgeLimitation;
+import enums.EducationLevel;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,12 +8,18 @@ import java.util.List;
 
 public class FileService {
 
+    private final String file;
+
+    public FileService(String file) {
+        this.file = file;
+    }
+
     /**
      * Добавляет названия организаций из файла в лист
      **/
-    public List<String> addStringsFromFileToList(String filePath) {
+    public List<String> addStringsFromFileToList() {
         List<String> stringList = new ArrayList<>();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 stringList.add(line);
@@ -54,7 +60,7 @@ public class FileService {
                 BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile))){
                 String line;
                 while((line = bufferedReader.readLine()) != null) {
-                    bufferedWriter.write(AgeLimitation.getRandomAgeLimit().getLimit() + ", " + line);
+                    bufferedWriter.write(EducationLevel.getRandomLevel().getAgeRange() + ", " + line);
                     bufferedWriter.newLine();
                 }
             }
@@ -62,39 +68,5 @@ public class FileService {
             throw new RuntimeException(e);
         }
     }
-
-    /**
-     * Служебный метод
-     * Добавляет "ограничения по возрасту" для каждой организации в зависимости от длинны строки
-     **/
-    public void writeWithAgeConditionsToFile(String out, List<String> list) {
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(out))) {
-            for (String str : list) {
-                if (str.length() >= 110 && str.length() <= 119) {
-                    bufferedWriter.write("(up to 18), " + str);
-                }
-                if (str.length() > 119 && str.length() <= 128) {
-                    bufferedWriter.write("(14 - 35), " + str);
-                }
-                if (str.length() > 128 && str.length() <= 137) {
-                    bufferedWriter.write("(65+), " + str);
-                }
-                if (str.length() > 137 && str.length() <= 146) {
-                    bufferedWriter.write("(up to 21), " + str);
-                }
-                if (str.length() > 146 && str.length() <= 154) {
-                    bufferedWriter.write("(no limit), " + str);
-                }
-                if (str.length() > 154) {
-                    bufferedWriter.write("(35 - 55), " + str);
-                }
-                bufferedWriter.newLine();
-            }
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 
 }
