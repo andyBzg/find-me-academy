@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Objects;
 
 @Setter
 @Getter
@@ -26,6 +27,25 @@ public class User {
         } else {
             return 0;
         }
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (age != user.age) return false;
+        return Objects.equals(dateOfBirth, user.dateOfBirth);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = dateOfBirth != null ? dateOfBirth.hashCode() : 0;
+        result = 31 * result + age;
+        return result;
     }
 
     @Override
