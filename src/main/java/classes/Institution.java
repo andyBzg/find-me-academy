@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Comparator;
 import java.util.List;
 
 @NoArgsConstructor
@@ -29,6 +30,7 @@ public class Institution {
         return list
                 .stream()
                 .map(Institution::mapToEntity)
+                .sorted(Comparator.comparing(Institution::getName))
                 .toList();
     }
 
@@ -46,21 +48,10 @@ public class Institution {
     }
 
     /**
-     * Выводит в консоль список (объектов)организаций с нумерацией
-     **/
-     public void printWithCount(List<Institution> list) {
-        int count = 0;
-        for (Institution institution : list) {
-            count++;
-            System.out.println(count + "." + institution);
-        }
-    }
-
-    /**
      * Заполняет конструктор объекта соответствующими строками из файла**/
     //TODO попробовать реализовать через стрим
     public static Institution mapToEntity(String line) {
-        String[] strings = line.split(",", 7);
+        String[] strings = line.split(", ", 7);
         String ageRestriction = strings.length >= 1 ? strings[0] : "";
         String name = strings.length >= 1 ? strings[1] : "";
         String country = strings.length >= 1 ? strings[2] : "";
@@ -73,6 +64,6 @@ public class Institution {
 
     @Override
     public String toString() {
-        return String.format("%s |%s |%s |%s |%s |%s", name, country, webpage, phone, email, address);
+        return String.format("%s | %s | %s | %s | %s | %s", name, country, webpage, phone, email, address);
     }
 }
