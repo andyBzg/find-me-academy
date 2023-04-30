@@ -1,6 +1,6 @@
 package enums;
 
-public enum PartOfYear {
+public enum PartOfDate {
 
     YEAR("year: "),
     MONTH("month: "),
@@ -9,7 +9,7 @@ public enum PartOfYear {
     private final String text;
 
 
-    PartOfYear(String text) {
+    PartOfDate(String text) {
         this.text = text;
     }
 
