@@ -19,12 +19,11 @@ public class User {
         this.age = calculateAge(dateOfBirth);
     }
 
-    private int calculateAge(LocalDate dateOfBirth) {
+    public int calculateAge(LocalDate dateOfBirth) {
         LocalDate currentDate = LocalDate.now();
-        if (dateOfBirth != null) {
+        if (dateOfBirth != null && !DateUtils.isDateOfBirthInFuture(dateOfBirth)) {
             return Period.between(dateOfBirth, currentDate).getYears();
-        }
-        else {
+        } else {
             return 0;
         }
     }
