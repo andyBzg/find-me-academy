@@ -1,0 +1,35 @@
+21-45, Massachusetts Institute of Technology, USA, web.mit.edu, +1 323-631-6227, marcia70@mueller.info, 41 Fairway Drive, Tewksbury MA 01876
+15-21, University of Oxford, UK, ox.ac.uk, +44 7700 197554, zakary.cummerata@gmail.com, 235 Brock Bridge Road, Laurel MD 20724
+3-7, Stanford University, USA, stanford.edu, +1 505-661-3021, xdooley@mclaughlin.net, 244 La Normandy Drive, Louisville KY 40223
+21-45, University of Cambridge, UK, cam.ac.uk, +44 7911 840000, streich.jaiden@schulist.com, 1840 Nobel Place, Louisville KY 40216
+5-15, Harvard University, USA, harvard.edu, +1 505-644-3916, teresa.lindgren@gmail.com, 2269 Eastern Boulevard, Montgomery AL 36117
+15-21, California Institute of Technology, USA, www.caltech.edu, +1 213-997-7797, douglas.rosie@rosenbaum.com, 6241 Hudson Creek Drive, Louisville KY 40291
+25-55, Imperial College London, UK, www.imperial.ac.uk, +44 7703 624285, dicki.phyllis@jones.com, 3146 North Old Wire Road, Fayetteville AR 72703
+5-15, ETH Zurich, Switzerland, ethz.ch, +41 75 554 61 54, stiedemann.orrin@wiza.info, 2617 Truffula Circle, Norman OK 73069
+5-15, University College London, UK, ucl.ac.uk, +44 7456 982258, hector83@durgan.info, 3511 Oakland Zion Road, Fayetteville AR 72703
+21-45, The University of Chicago, USA, www.uchicago.edu, +1 208-727-7630, schmeler.carolyne@gmail.com, 72 Salmon Road, Alameda CA 94502
+21-45, National University of Singapore, Singapore, www.nus.edu.sg, +65 8952 0213, smith.jackeline@gmail.com, 2113 Bowen Drive, Montgomery AL 36106
+25-55, Institut Polytechnique de Paris, France, ip-paris.fr/en, +33 7 49 11 87 19, mekhi49@yahoo.com, 37675 Fremont Boulevard, Fremont CA 94536
+15-21, Shanghai Jiao Tong University, China, en.sjtu.edu.cn, +86 151 8655 1836, xhand@gmail.com, 5936 North 80th Drive, Glendale AZ 85303
+21-45, Technical University of Munich, Germany, www.tum.de, +49 175 09613219, pmarquardt@abernathy.net, Birkenbergstr. 12, 29049 Hamburg
+5-15, University of Amsterdam, Netherlands, uva.nl, +31 6 45938605, anabelle91@quitzon.net, 5458 30th Street Northwest, Washington AR 20015
+25-55, Delft University of Technology, Netherlands, tudelft.nl/en, +31 970 665 86455, larue24@gmail.com, 10262 West 59th Avenue, Arvada CO 80004
+21-45, Ruprecht-Karls-Universität Heidelberg, Germany, www.uni-heidelberg.de, +49 163 1328460, schaefer.lina@hotmail.com, Dönhoffstr. 11, 07223 Alt Giadaburg, Rheinland-Pfalz
+25-55, Ludwig-Maximilians-Universität München, Germany, uni-muenchen.de, +49 172 78475707, nicolas.joaquin@yahoo.com, Stöckenstr. 68, 12587 Ronburg, Bayern
+45-65, Universiti Malaya, Malaysia, um.edu.my, +60 10-807 8099, lherman@gmail.com, 44 Colonial Road, Manchester CT 06042
+1-100, National Taiwan University, Taiwan, ntu.edu.tw/english, +886 940 947 698, dstracke@yahoo.com, 1960 Sigfrid Court, Annapolis MD 21401
+1-100, Universidad de Buenos Aires, Argentina, uba.ar, +54 9 3888 12-1079, rterry@marvin.biz, 6231 North 67th Avenue, Glendale AZ 85301
+15-21, KU Leuven, Belgium, kuleuven.be, +32 456 47 54 40, king.anastasia@gmail.com, 6506 North Lagoon Drive, Panama City Beach FL 32408
+15-21, University of Zurich, Switzerland, www.uzh.ch, +41 73 187 38 02, anastacio07@keebler.info, 195 Kennedy Road, Manchester CT 06042
+45-65, Sorbonne University, France, www.sorbonne-universite.fr/en, +33 6 99 20 57 79, alba83@williamson.com, 8404 South Villa Avenue, Oklahoma City OK 73159
+21-45, МГУ им. Ломоносова, Russia, msu.ru, +7 937 614-07-14, shanahan.macey@hoeger.com, 6902 West Sherri Jean Lane, Peoria AZ 85382
+21-45, University of Copenhagen, Denmark, ku.dk, +45 46 03 80 16, beer.virginie@hotmail.com, 236 Alden Road, Hayward CA 94541
+21-45, Yonsei University, South Korea, www.yonsei.ac.kr/eng, +82 12-232-5884, yost.ernesto@yahoo.com, 717 Joseph Avenue, Nashville TN 37207
+21-45, Durham University, UK, dur.ac.u, +44 7911 030671, annamarie.legros@russel.com, 64 Roseberry Circle, Port Wentworth GA 31407
+25-55, Tohoku University, Japan, www.tohoku.ac.jp, +81 90-3168-7059, qferry@yahoo.com, 4463 Cato Road, Nashville TN 37218
+45-65, Université Paris-Saclay, France, universite-paris-saclay.fr, +33 7 71 57 92 94, sherman47@toy.com, 228 Central Street, Milford MA 01757
+5-15, Lund University, Sweden, www.lunduniversity.lu.se, +46 70 577 99 21, walter.alysa@gmail.com, 529 Wesley Avenue, Nashville TN 37207
+1-100, KTH Royal Institute of Technology, Sweden, kth.se, +46 72 040 08 04, anabelle.wolf@gmail.com, 23 Florida Avenue Northeast, Washington AR 20002
+1-100, University of Leeds, UK, leeds.ac.uk, +44 7261 381632, bud36@hotmail.com, 212 Holiday Circle, Savannah GA 31419
+25-55, Technical University of Denmark, Denmark, www.dtu.dk/english, +45 91 93 66 84, eladio33@gmail.com, 3612 Jim Robison Drive, Edmond OK 73013
+15-21, University of North Carolina, USA, www.unc.edu, +1 308-613-7949, elmore.leuschke@gmail.com, 2300 Deer Path Circle, Hurstbourne Acres KY 40220
