@@ -23,9 +23,6 @@ public class Institution {
     private String address;
 
 
-    /**
-     * Превращает лист из строк в лист из объектов
-     **/
     public List<Institution> convertStringsToObjects(List<String> list) {
         return list
                 .stream()
@@ -47,9 +44,6 @@ public class Institution {
         return age >= start && age <= end;
     }
 
-    /**
-     * Заполняет конструктор объекта соответствующими строками из файла**/
-    //TODO попробовать реализовать через стрим
     public static Institution mapToEntity(String line) {
         String[] strings = line.split(", ", 7);
         String ageRestriction = strings.length >= 1 ? strings[0] : "";
