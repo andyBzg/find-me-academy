@@ -1,12 +1,14 @@
 package classes;
 
 import enums.PartOfYear;
+import lombok.extern.log4j.Log4j2;
 
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+@Log4j2
 public class BirthdateRequest {
 
     private final Scanner scanner;
@@ -18,8 +20,12 @@ public class BirthdateRequest {
         message = new MessagePrinter();
     }
 
+    public LocalDate startOver(){
+        return getUserBirthdate();
+    }
+
     public LocalDate getUserBirthdate() {
-        message.printInitialMessage();
+        message.printBirthdateRequestMessage();
 
         try {
             String day = getDay();
@@ -38,6 +44,7 @@ public class BirthdateRequest {
             }
         }
         catch (InputMismatchException e) {
+            log.error("getUserBirthdate: " + e.getMessage());
             throw new NoSuchElementException(e);
         }
     }
