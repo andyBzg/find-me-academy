@@ -1,11 +1,13 @@
 package classes;
 
 import enums.EducationLevel;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log4j2
 public class FileService {
 
     private final String file;
@@ -26,6 +28,7 @@ public class FileService {
             }
         }
         catch (IOException e) {
+            log.error("addStringsFromFileToList: " + e.getMessage());
             throw new RuntimeException(e);
         }
         return stringList;
@@ -46,6 +49,7 @@ public class FileService {
                 }
             }
         } catch (IOException e) {
+            log.error("rewriteToNewFile: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -65,6 +69,7 @@ public class FileService {
                 }
             }
         } catch (IOException e) {
+            log.error("rewriteToNewFileWithRandomAgeLimit: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
