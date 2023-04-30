@@ -19,12 +19,8 @@ public class MessagePrinter {
 
     public void printInputErrorMessage(String input) {
         System.err.printf("Fail. You entered '%s' \nPlease enter correct data: ", input);
-        //TODO сделать универсальный метод который выводит соответсвующий текст в зависисмости от переданных данных
     }
 
-    /**
-     * Выводит в консоль список (объектов)организаций с нумерацией
-     **/
     public void printWithCount(List<?> list) {
         AtomicInteger count = new AtomicInteger(0);
         list.forEach(e -> System.out.printf("%s. %s\n", count.incrementAndGet(), e));
