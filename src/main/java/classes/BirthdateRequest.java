@@ -1,6 +1,6 @@
 package classes;
 
-import enums.PartOfYear;
+import enums.PartOfDate;
 import lombok.extern.log4j.Log4j2;
 
 import java.time.LocalDate;
@@ -20,9 +20,6 @@ public class BirthdateRequest {
         message = new MessagePrinter();
     }
 
-    public LocalDate startOver(){
-        return getUserBirthdate();
-    }
 
     public LocalDate getUserBirthdate() {
         message.printBirthdateRequestMessage();
@@ -50,7 +47,7 @@ public class BirthdateRequest {
     }
 
     private String getDay() {
-        message.printInputRequest(PartOfYear.DAY.toString());
+        message.printInputRequest(PartOfDate.DAY.toString());
         String day = scanner.nextLine();
         while (!isNumeric(day) || !isDay(Integer.parseInt(day))) {
             message.printInputErrorMessage(day);
@@ -61,7 +58,7 @@ public class BirthdateRequest {
     }
 
     private String getMonth() {
-        message.printInputRequest(PartOfYear.MONTH.toString());
+        message.printInputRequest(PartOfDate.MONTH.toString());
         String month = scanner.nextLine();
         while (!isNumeric(month) || !isMonth(Integer.parseInt(month))) {
             message.printInputErrorMessage(month);
@@ -72,7 +69,7 @@ public class BirthdateRequest {
     }
 
     private String getYear() {
-        message.printInputRequest(PartOfYear.YEAR.toString());
+        message.printInputRequest(PartOfDate.YEAR.toString());
         String year = scanner.nextLine();
         while (!isNumeric(year) || !isOverHundredYearsOld(Integer.parseInt(year))) {
             message.printInputErrorMessage(year);
@@ -91,15 +88,15 @@ public class BirthdateRequest {
     }
 
     private boolean isDay(int dayOfMonth) {
-        return dayOfMonth <= 31 && dayOfMonth > 0; // не больше 31
+        return dayOfMonth <= 31 && dayOfMonth > 0;
     }
 
     private boolean isMonth(int month) {
-        return month <= 12 && month > 0; // не больше 12
+        return month <= 12 && month > 0;
     }
 
     private boolean isOverHundredYearsOld(int year) {
-        return year > LocalDate.now().getYear() - 100; // не больше текущего года и не старше 100 лет
+        return year > LocalDate.now().getYear() - 100;
     }
 
     private String addZeroIfNumberIsOnlyOneDigit(String number) {
