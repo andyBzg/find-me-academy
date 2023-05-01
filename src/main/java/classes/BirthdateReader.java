@@ -20,11 +20,11 @@ public class BirthdateReader {
     public String readDay() {
         message.printInputRequest(PartOfDate.DAY.toString());
         String day = scanner.nextLine();
-        checkForCommand(day);
+        listenForCommand(day);
         while (!checkDay(day)) {
             message.printInputErrorMessage(day);
             day = scanner.nextLine();
-            checkForCommand(day);
+            listenForCommand(day);
         }
         return DateUtils.addZeroIfNumberIsOnlyOneDigit(day);
     }
@@ -32,11 +32,11 @@ public class BirthdateReader {
     public String readMonth() {
         message.printInputRequest(PartOfDate.MONTH.toString());
         String month = scanner.nextLine();
-        checkForCommand(month);
+        listenForCommand(month);
         while (!checkMonth(month)) {
             message.printInputErrorMessage(month);
             month = scanner.nextLine();
-            checkForCommand(month);
+            listenForCommand(month);
         }
         return DateUtils.addZeroIfNumberIsOnlyOneDigit(month);
     }
@@ -44,11 +44,11 @@ public class BirthdateReader {
     public String readYear() {
         message.printInputRequest(PartOfDate.YEAR.toString());
         String year = scanner.nextLine();
-        checkForCommand(year);
+        listenForCommand(year);
         while (!checkYear(year)) {
             message.printInputErrorMessage(year);
             year = scanner.nextLine();
-            checkForCommand(year);
+            listenForCommand(year);
         }
         return year;
     }
@@ -68,9 +68,9 @@ public class BirthdateReader {
                 DateUtils.isOverHundredYearsOld(Integer.parseInt(year));
     }
 
-    public void checkForCommand(String input) {
+    public void listenForCommand(String input) {
         if (input.matches(Command.STOP.getCmd())) {
-            App.stop();
+            ApplicationStopper.stop();
         }
     }
 

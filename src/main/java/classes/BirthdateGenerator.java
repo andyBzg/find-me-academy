@@ -10,6 +10,7 @@ public class BirthdateGenerator {
 
     private final BirthdateReader birthdateReader;
     private final MessagePrinter message;
+    private static final String PLACEHOLDER = "%s-%s-%s";
 
 
     public BirthdateGenerator() {
@@ -18,18 +19,18 @@ public class BirthdateGenerator {
     }
 
 
-    public LocalDate generate() {
+    public LocalDate createBirthdate() {
         message.printBirthdateRequestMessage();
         String day = birthdateReader.readDay();
         String month = birthdateReader.readMonth();
         String year = birthdateReader.readYear();
         try {
-            String date = String.format("%s-%s-%s", year, month, day);
+            String date = String.format(PLACEHOLDER, year, month, day);
             LocalDate dateOfBirth = LocalDate.parse(date);
 
             if (DateUtils.isDateOfBirthInFuture(dateOfBirth)) {
                 message.printErrorIfBirthdateInFuture();
-                generate();
+                createBirthdate();
             }
             return dateOfBirth;
         } catch (DateTimeException e) {

@@ -20,9 +20,17 @@ public class Institution {
     private String phone;
     private String email;
     private String address;
+    private static final int LIMITATION_FOR_SPLIT = 7;
 
 
-    public List<Institution> convertStringsToObjects(List<String> list) {
+    public List<Institution> getSuitableInstitutionByUserAge(List<Institution> list, int age) {
+        return list.stream()
+                .filter(Objects::nonNull)
+                .filter(s -> new Range(s.getAgeRange()).isAgeInRange(age))
+                .toList();
+    }
+
+    public static List<Institution> convertStringsToObjects(List<String> list) {
         return list
                 .stream()
                 .filter(Objects::nonNull)
@@ -31,22 +39,8 @@ public class Institution {
                 .toList();
     }
 
-    public List<Institution> getSuitableInstitutionByUserAge(List<Institution> list, int age) {
-        return list.stream()
-                .filter(Objects::nonNull)
-                .filter(s -> isAgeInRange(age, s.getAgeRange()))
-                .toList();
-    }
-
-    public boolean isAgeInRange(int age, String range) {
-        String[] strings = range.split("-");
-        int start = Integer.parseInt(strings[0]);
-        int end = Integer.parseInt(strings[1]);
-        return age >= start && age <= end;
-    }
-
     public static Institution mapToEntity(String line) {
-        String[] strings = line.split(", ", 7);
+        String[] strings = line.split(", ", LIMITATION_FOR_SPLIT);
         String ageRestriction = strings.length >= 1 ? strings[0] : "";
         String name = strings.length >= 1 ? strings[1] : "";
         String country = strings.length >= 1 ? strings[2] : "";

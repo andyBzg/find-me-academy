@@ -30,7 +30,7 @@ public class MessagePrinter {
         System.out.printf("You have stop-word! \nType '%s' to exit.\n\n", command);
     }
 
-    public void printItOut(List<?> list) {
+    public void printListIfNotEmpty(List<?> list) {
         if (list.size() >= 1) {
             printWithCount(list);
             System.out.println();
