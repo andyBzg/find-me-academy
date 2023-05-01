@@ -70,7 +70,7 @@ public class BirthdateReader {
 
     public void checkForCommand(String input) {
         if (input.matches(Command.STOP.getCmd())) {
-            System.exit(0);
+            App.stop();
         }
     }
 
