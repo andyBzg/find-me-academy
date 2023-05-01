@@ -26,7 +26,16 @@ public class MessagePrinter {
         list.forEach(e -> System.out.printf("%s. %s\n", count.incrementAndGet(), e));
     }
 
-    public void printGreetings() {
-        System.out.println("Написать приветсвенный тест");
+    public void printCommands(String command) {
+        System.out.printf("You have stop-word! \nType '%s' to exit.\n\n", command);
+    }
+
+    public void printItOut(List<?> list) {
+        if (list.size() >= 1) {
+            printWithCount(list);
+            System.out.println();
+        } else {
+            System.out.println("There is no school you could go to at your age.");
+        }
     }
 }

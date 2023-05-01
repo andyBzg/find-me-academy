@@ -1,17 +1,16 @@
 package classes;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Institution {
 
     private String ageRange;
@@ -26,6 +25,7 @@ public class Institution {
     public List<Institution> convertStringsToObjects(List<String> list) {
         return list
                 .stream()
+                .filter(Objects::nonNull)
                 .map(Institution::mapToEntity)
                 .sorted(Comparator.comparing(Institution::getName))
                 .toList();
@@ -33,11 +33,12 @@ public class Institution {
 
     public List<Institution> getSuitableInstitutionByUserAge(List<Institution> list, int age) {
         return list.stream()
+                .filter(Objects::nonNull)
                 .filter(s -> isAgeInRange(age, s.getAgeRange()))
                 .toList();
     }
 
-    private static boolean isAgeInRange(int age, String range) {
+    public boolean isAgeInRange(int age, String range) {
         String[] strings = range.split("-");
         int start = Integer.parseInt(strings[0]);
         int end = Integer.parseInt(strings[1]);

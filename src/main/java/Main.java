@@ -1,4 +1,5 @@
 import classes.*;
+
 import lombok.extern.log4j.Log4j2;
 
 import java.time.LocalDate;
@@ -15,8 +16,8 @@ public class Main {
         Institution institution = new Institution();
         List<Institution> institutionList = institution.convertStringsToObjects(stringsList);
 
-        BirthdateRequest birthdateRequest = new BirthdateRequest();
-        LocalDate birthDate = birthdateRequest.getUserBirthdate();
+        BirthdateGenerator birthdateGenerator = new BirthdateGenerator();
+        LocalDate birthDate = birthdateGenerator.generate();
 
         User user = new User(birthDate);
 
