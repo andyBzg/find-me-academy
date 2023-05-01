@@ -26,6 +26,5 @@ public class Main {
         MessagePrinter message = new MessagePrinter();
 
         message.printWithCount(suitableList);
-
     }
 }
