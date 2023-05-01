@@ -6,5 +6,6 @@ public class Main {
         String file = "src/main/resources/Universities.txt";
         App app = new App(file);
         app.start();
+
     }
 }
