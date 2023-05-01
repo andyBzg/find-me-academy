@@ -1,4 +1,4 @@
-package enums;
+package features;
 
 import java.util.Random;
 
