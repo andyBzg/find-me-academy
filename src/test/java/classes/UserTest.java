@@ -1,5 +1,6 @@
 package classes;
 
+import entity.User;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package classes;
+package service;
 
 public class ApplicationStopper {
 

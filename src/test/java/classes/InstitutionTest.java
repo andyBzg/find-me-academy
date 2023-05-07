@@ -1,5 +1,6 @@
 package classes;
 
+import entity.Institution;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,5 +1,6 @@
-package classes;
+package entity;
 
+import utility.DateUtils;
 import lombok.Getter;
 import lombok.Setter;
 

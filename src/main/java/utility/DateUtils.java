@@ -1,8 +1,10 @@
-package classes;
+package utility;
 
 import java.time.LocalDate;
 
 public class DateUtils {
+
+    private static final int AGE_LOWER_LIMIT = 100;
 
     public static boolean isDateOfBirthInFuture(LocalDate date) {
         LocalDate localDateNow = LocalDate.now();
@@ -30,7 +32,7 @@ public class DateUtils {
     }
 
     public static boolean isOverHundredYearsOld(int year) {
-        return year > LocalDate.now().getYear() - 100;
+        return year <= LocalDate.now().getYear() - AGE_LOWER_LIMIT;
     }
 
     public static String addZeroIfNumberIsOnlyOneDigit(String number) {

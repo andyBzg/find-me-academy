@@ -1,7 +1,9 @@
-package classes;
+package input;
 
-import enums.Command;
 import enums.PartOfDate;
+import service.ConsoleCommandHandler;
+import utility.DateUtils;
+import output.MessagePrinter;
 
 import java.util.Scanner;
 
@@ -9,22 +11,24 @@ public class BirthdateReader {
 
     private final Scanner scanner;
     private final MessagePrinter message;
+    private final ConsoleCommandHandler commandHandler;
 
 
     public BirthdateReader() {
         scanner = new Scanner(System.in);
         message = new MessagePrinter();
+        commandHandler = new ConsoleCommandHandler();
     }
 
 
     public String readDay() {
         message.printInputRequest(PartOfDate.DAY.toString());
         String day = scanner.nextLine();
-        listenForCommand(day);
-        while (!checkDay(day)) {
+        commandHandler.listenForStopCommand(day);
+        while (!validateDay(day)) {
             message.printInputErrorMessage(day);
             day = scanner.nextLine();
-            listenForCommand(day);
+            commandHandler.listenForStopCommand(day);
         }
         return DateUtils.addZeroIfNumberIsOnlyOneDigit(day);
     }
@@ -32,11 +36,11 @@ public class BirthdateReader {
     public String readMonth() {
         message.printInputRequest(PartOfDate.MONTH.toString());
         String month = scanner.nextLine();
-        listenForCommand(month);
-        while (!checkMonth(month)) {
+        commandHandler.listenForStopCommand(month);
+        while (!validateMonth(month)) {
             message.printInputErrorMessage(month);
             month = scanner.nextLine();
-            listenForCommand(month);
+            commandHandler.listenForStopCommand(month);
         }
         return DateUtils.addZeroIfNumberIsOnlyOneDigit(month);
     }
@@ -44,34 +48,28 @@ public class BirthdateReader {
     public String readYear() {
         message.printInputRequest(PartOfDate.YEAR.toString());
         String year = scanner.nextLine();
-        listenForCommand(year);
-        while (!checkYear(year)) {
+        commandHandler.listenForStopCommand(year);
+        while (!validateYear(year)) {
             message.printInputErrorMessage(year);
             year = scanner.nextLine();
-            listenForCommand(year);
+            commandHandler.listenForStopCommand(year);
         }
         return year;
     }
 
-    private boolean checkDay(String day) {
+    private boolean validateDay(String day) {
         return DateUtils.isNumeric(day) && DateUtils.isDay(Integer.parseInt(day));
     }
 
-    private boolean checkMonth(String month) {
+    private boolean validateMonth(String month) {
         return DateUtils.isNumeric(month) && DateUtils.isMonth(Integer.parseInt(month));
     }
 
-    private boolean checkYear(String year) {
+    private boolean validateYear(String year) {
         return DateUtils.isNumeric(year) &&
                 DateUtils.isFourDigit(year) &&
                 DateUtils.isCurrentYear(Integer.parseInt(year)) &&
-                DateUtils.isOverHundredYearsOld(Integer.parseInt(year));
-    }
-
-    public void listenForCommand(String input) {
-        if (input.matches(Command.STOP.getCmd())) {
-            ApplicationStopper.stop();
-        }
+                !DateUtils.isOverHundredYearsOld(Integer.parseInt(year));
     }
 
     @Override

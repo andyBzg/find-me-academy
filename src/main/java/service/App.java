@@ -1,6 +1,11 @@
-package classes;
+package service;
 
+import entity.Institution;
+import entity.User;
 import enums.Command;
+import output.MessagePrinter;
+import service.BirthdateGenerator;
+import service.FileService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

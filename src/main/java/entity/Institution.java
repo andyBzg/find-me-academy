@@ -1,6 +1,7 @@
-package classes;
+package entity;
 
 import lombok.*;
+import service.Range;
 
 import java.util.Comparator;
 import java.util.List;

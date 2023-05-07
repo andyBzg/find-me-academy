@@ -2,6 +2,7 @@ package classes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import service.Range;
 
 import static org.junit.jupiter.api.Assertions.*;
 
