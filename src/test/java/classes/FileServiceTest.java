@@ -12,7 +12,7 @@ class FileServiceTest {
     @Test
     void addStringsFromFileToList_givenCorrectFile_success() {
         // given
-        String file = "src/test/resources/Test.txt";
+        String file = "src/test/resources/Test-file.txt";
         FileService fileService = new FileService(file);
         List<String> expected = List.of("String for test");
 
@@ -24,9 +24,9 @@ class FileServiceTest {
     }
 
     @Test
-    void addStringsFromFileToList_fileIsEmpty_success() {
+    void addStringsFromFileToList_fileIsEmpty_nothing() {
         // given
-        String file = "src/test/resources/Test_empty.txt";
+        String file = "src/test/resources/Empty-file.txt";
         FileService fileService = new FileService(file);
         List<String> expected = new ArrayList<>();
 
@@ -38,7 +38,7 @@ class FileServiceTest {
     }
 
     @Test
-    void addStringsFromFileToList_filepathIsEmpty_success() {
+    void addStringsFromFileToList_filepathIsEmpty_throwsException() {
         String file = "";
         FileService fileService = new FileService(file);
 
