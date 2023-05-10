@@ -4,15 +4,14 @@ import entity.Institution;
 import entity.User;
 import enums.Command;
 import output.MessagePrinter;
-import service.BirthdateGenerator;
-import service.FileService;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class App {
+public class Application {
 
+    private final static String FILE_PATH = "src/main/resources/Universities.txt";
     private final String stopCommand = Command.STOP.getCmd();
     private final FileService fileService;
     private final Institution institution;
@@ -22,8 +21,8 @@ public class App {
     private List<Institution> institutionList;
 
 
-    public App(String file) {
-        fileService = new FileService(file);
+    public Application() {
+        fileService = new FileService(FILE_PATH);
         institution = new Institution();
         message = new MessagePrinter();
         birthdateGenerator = new BirthdateGenerator();

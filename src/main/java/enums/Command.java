@@ -2,7 +2,7 @@ package enums;
 
 public enum Command {
 
-    STOP( "/stop");
+    STOP("/stop");
 
     private final String cmd;
 

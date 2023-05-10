@@ -1,11 +1,8 @@
-import service.App;
+import service.Application;
 
 public class Main {
     public static void main(String[] args) {
-
-        String file = "src/main/resources/Universities.txt";
-        App app = new App(file);
-        app.start();
-
+        Application application = new Application();
+        application.start();
     }
 }

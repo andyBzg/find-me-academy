@@ -36,10 +36,6 @@ public class DateUtils {
     }
 
     public static String addZeroIfNumberIsOnlyOneDigit(String number) {
-        if (number.length() == 1) {
-            return "0" + number;
-        } else {
-            return number;
-        }
+        return number.length() == 1 ? "0" + number : number;
     }
 }
