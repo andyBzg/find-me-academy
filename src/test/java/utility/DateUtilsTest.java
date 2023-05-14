@@ -1,4 +1,4 @@
-package classes;
+package utility;
 
 import org.junit.jupiter.api.Test;
 import utility.DateUtils;

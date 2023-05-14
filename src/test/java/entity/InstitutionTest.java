@@ -1,4 +1,4 @@
-package classes;
+package entity;
 
 import entity.Institution;
 import org.junit.jupiter.api.BeforeEach;

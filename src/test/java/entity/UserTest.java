@@ -1,4 +1,4 @@
-package classes;
+package entity;
 
 import entity.User;
 import org.junit.jupiter.api.Test;
