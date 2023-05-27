@@ -31,7 +31,7 @@ public class MessagePrinter {
     }
 
     public void printListIfNotEmpty(List<?> list) {
-        if (list.size() >= 1) {
+        if (!list.isEmpty()) {
             printWithCount(list);
             System.out.println();
         } else {

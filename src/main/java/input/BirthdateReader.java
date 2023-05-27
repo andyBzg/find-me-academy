@@ -1,12 +1,14 @@
 package input;
 
 import enums.PartOfDate;
+import lombok.Data;
 import service.ConsoleCommandHandler;
 import utility.DateUtils;
 import output.MessagePrinter;
 
 import java.util.Scanner;
 
+@Data
 public class BirthdateReader {
 
     private final Scanner scanner;
@@ -70,24 +72,6 @@ public class BirthdateReader {
                 DateUtils.isFourDigit(year) &&
                 DateUtils.isCurrentYear(Integer.parseInt(year)) &&
                 !DateUtils.isOverHundredYearsOld(Integer.parseInt(year));
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        BirthdateReader that = (BirthdateReader) o;
-
-        if (!scanner.equals(that.scanner)) return false;
-        return message.equals(that.message);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = scanner.hashCode();
-        result = 31 * result + message.hashCode();
-        return result;
     }
 }
 

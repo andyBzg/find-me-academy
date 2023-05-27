@@ -5,6 +5,11 @@ import java.time.LocalDate;
 public class DateUtils {
 
     private static final int AGE_LOWER_LIMIT = 100;
+    private static final String REGEX_FOR_NUMBERS = "[0-9.]+";
+
+    private DateUtils() {
+
+    }
 
     public static boolean isDateOfBirthInFuture(LocalDate date) {
         LocalDate localDateNow = LocalDate.now();
@@ -12,7 +17,7 @@ public class DateUtils {
     }
 
     public static boolean isNumeric(String str) {
-        return (str != null) && (str.matches("[0-9.]+"));
+        return (str != null) && (str.matches(REGEX_FOR_NUMBERS));
     }
 
     public static boolean isDay(int dayOfMonth) {

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Application {
 
-    private final static String FILE_PATH = "src/main/resources/Universities.txt";
+    private static final String FILE_PATH = "src/main/resources/Universities.txt";
     private final String stopCommand = Command.STOP.getCmd();
     private final FileService fileService;
     private final Institution institution;

@@ -6,18 +6,12 @@ public enum Command {
 
     private final String cmd;
 
-    public String getCmd() {
-        return cmd;
-    }
 
     Command(String cmd) {
         this.cmd = cmd;
     }
 
-    @Override
-    public String toString() {
-        return "ConsoleCommand{" +
-                "cmd='" + cmd + '\'' +
-                '}';
+    public String getCmd() {
+        return cmd;
     }
 }

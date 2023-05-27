@@ -1,15 +1,16 @@
 package service;
 
 import input.BirthdateReader;
+import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 import utility.DateUtils;
 import output.MessagePrinter;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.util.Objects;
 
 @Log4j2
+@Data
 public class BirthdateGenerator {
 
     private static final String PLACEHOLDER = "%s-%s-%s";
@@ -47,31 +48,7 @@ public class BirthdateGenerator {
             return dateOfBirth;
         } catch (DateTimeException e) {
             log.error(e);
-            throw new RuntimeException(e);
+            throw new DateTimeException(e.getMessage());
         }
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        BirthdateGenerator that = (BirthdateGenerator) o;
-
-        if (!birthdateReader.equals(that.birthdateReader)) return false;
-        if (!message.equals(that.message)) return false;
-        if (!Objects.equals(day, that.day)) return false;
-        if (!Objects.equals(month, that.month)) return false;
-        return Objects.equals(year, that.year);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = birthdateReader.hashCode();
-        result = 31 * result + message.hashCode();
-        result = 31 * result + (day != null ? day.hashCode() : 0);
-        result = 31 * result + (month != null ? month.hashCode() : 0);
-        result = 31 * result + (year != null ? year.hashCode() : 0);
-        return result;
     }
 }

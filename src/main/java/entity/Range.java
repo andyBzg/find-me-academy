@@ -1,7 +1,8 @@
-package service;
+package entity;
 
 public class Range {
 
+    private static final String DELIMITER = "-";
     private int from;
     private int to;
 
@@ -11,7 +12,7 @@ public class Range {
     }
 
     public void parseString(String range) {
-        String[] strings = range.split("-");
+        String[] strings = range.split(DELIMITER);
         from = Integer.parseInt(strings[0]);
         to = Integer.parseInt(strings[1]);
     }

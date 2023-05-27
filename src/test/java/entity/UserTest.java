@@ -13,7 +13,7 @@ class UserTest {
     public void calculateAge_actualDate_success() {
         // given
         LocalDate birthDate = LocalDate.of(1961, 5, 17);
-        int expected = 61;
+        int expected = 62;
         User user = new User(birthDate);
 
         // when

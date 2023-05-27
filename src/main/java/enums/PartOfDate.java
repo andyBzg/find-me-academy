@@ -1,5 +1,6 @@
 package enums;
 
+
 public enum PartOfDate {
 
     YEAR("year: "),
@@ -13,8 +14,7 @@ public enum PartOfDate {
         this.text = text;
     }
 
-    @Override
-    public String toString() {
+    public String getText() {
         return text;
     }
 }
