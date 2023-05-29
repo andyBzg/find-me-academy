@@ -1,41 +1,44 @@
 package output;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Log4j2
 public class MessagePrinter {
 
     public void printBirthdateRequestMessage() {
-        System.out.println("Please enter your date of birth");
+        log.info("Please enter your date of birth\n");
     }
 
     public void printErrorIfBirthdateInFuture() {
-        System.out.println("Date of birth cannot be in the future");
+        log.info("Date of birth cannot be in the future\n");
     }
 
     public void printInputRequest(String string) {
-        System.out.print(string);
+        log.info(string);
     }
 
     public void printInputErrorMessage(String input) {
-        System.err.printf("Fail. You entered '%s' \nPlease enter correct data: ", input);
+        log.info("Fail. You entered '{}' \nPlease enter correct data: ", input);
     }
 
     public void printWithCount(List<?> list) {
         AtomicInteger count = new AtomicInteger(0);
-        list.forEach(e -> System.out.printf("%s. %s\n", count.incrementAndGet(), e));
+        list.forEach(e -> log.info("{}. {}\n", count.incrementAndGet(), e));
     }
 
     public void printCommands(String command) {
-        System.out.printf("You have stop-word! \nType '%s' to exit.\n\n", command);
+        log.info("You have stop-word! \nType '{}' to exit.\n\n", command);
     }
 
     public void printListIfNotEmpty(List<?> list) {
         if (!list.isEmpty()) {
             printWithCount(list);
-            System.out.println();
+            log.info("\n");
         } else {
-            System.out.println("There is no school you could go to at your age.");
+            log.info("There is no school you could go to at your age.");
         }
     }
 }
