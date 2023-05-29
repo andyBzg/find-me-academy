@@ -2,19 +2,18 @@ package entity;
 
 import lombok.*;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Institution {
 
-    private static final int LIMITATION_FOR_SPLIT = 7;
+    private static final int NUMBER_OF_LINES_TO_FILL_CLASS_FIELDS = 7;
     private static final String DELIMITER = ", ";
     private static final String EMPTY_STRING = "";
     private static final String STRING_FORMAT = "%s | %s | %s | %s | %s | %s";
+
     private String ageRange;
     private String name;
     private String country;
@@ -41,16 +40,20 @@ public class Institution {
     }
 
     public static Institution mapToEntity(String line) {
-        String[] strings = line.split(DELIMITER, LIMITATION_FOR_SPLIT);
-        String ageRestriction = strings.length >= 1 ? strings[0] : EMPTY_STRING;
-        String name = strings.length >= 1 ? strings[1] : EMPTY_STRING;
-        String country = strings.length >= 1 ? strings[2] : EMPTY_STRING;
-        String webpage = strings.length >= 1 ? strings[3] : EMPTY_STRING;
-        String phone = strings.length >= 1 ? strings[4] : EMPTY_STRING;
-        String email = strings.length >= 1 ? strings[5] : EMPTY_STRING;
-        String address = strings.length >= 1 ? strings[6] : EMPTY_STRING;
-        return new Institution(ageRestriction, name, country, webpage, phone, email, address);
+        List<String> strings = Arrays.stream(line.split(DELIMITER, NUMBER_OF_LINES_TO_FILL_CLASS_FIELDS))
+                .map(s -> s.isEmpty() ? EMPTY_STRING : s)
+                .toList();
+        return new Institution(
+                strings.get(0),
+                strings.get(1),
+                strings.get(2),
+                strings.get(3),
+                strings.get(4),
+                strings.get(5),
+                strings.get(6)
+        );
     }
+
 
     @Override
     public String toString() {
