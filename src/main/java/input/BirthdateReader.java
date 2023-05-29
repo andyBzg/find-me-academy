@@ -24,7 +24,7 @@ public class BirthdateReader {
 
 
     public String readDay() {
-        message.printInputRequest(PartOfDate.DAY.toString());
+        message.printInputRequest(PartOfDate.DAY.getText());
         String day = scanner.nextLine();
         commandHandler.listenForStopCommand(day);
         while (!validateDay(day)) {
@@ -36,7 +36,7 @@ public class BirthdateReader {
     }
 
     public String readMonth() {
-        message.printInputRequest(PartOfDate.MONTH.toString());
+        message.printInputRequest(PartOfDate.MONTH.getText());
         String month = scanner.nextLine();
         commandHandler.listenForStopCommand(month);
         while (!validateMonth(month)) {
@@ -48,7 +48,7 @@ public class BirthdateReader {
     }
 
     public String readYear() {
-        message.printInputRequest(PartOfDate.YEAR.toString());
+        message.printInputRequest(PartOfDate.YEAR.getText());
         String year = scanner.nextLine();
         commandHandler.listenForStopCommand(year);
         while (!validateYear(year)) {
